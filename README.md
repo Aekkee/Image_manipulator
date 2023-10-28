@@ -167,40 +167,157 @@ To use this program, follow these steps:
 
 <br><br>
 
-## Guide and explanation
+#  Explanation
 
-This topic will include guide for every function in this program and example of the output.
+## 1. `ascii_art`
 
-1. Asciiart
+Transforms an image into colorful ASCII representation.
+
+### Parameters:
+
+- `img`: Source image.
+- `width` & `height`: ASCII art dimensions.
+- `scale`: Granularity of ASCII art.
+- `output`: Filename for output.
+
+### Explanation:
+
+Iterates through image pixels and maps the average color value to an ASCII character. The result is printed to the console and saved to a file.
 
 | Input  | Output |
 | ------------- | ------------- |
 | <img src="https://github.com/Aekkee/Image_manipulator/assets/107569390/01e5bea8-9146-4843-a511-d9dcf7fa3f53" width="500" >  | <img src="https://github.com/Aekkee/Image_manipulator/assets/107569390/99ab1e9c-b395-4345-bf4b-722483275421" width="500" >| 
 
-2. Concatenate
-   
-3. Convert
+---
 
-4. Scaledown
+## 2. `get_str_ascii`
 
-5. Scaleup
-   
-6. Pixelate
-   
-7. Settransparency
-    
-8. Grayscale
-     
-9. Extractwebp
-    
-10. Extractgif
-    
-11. flipv
-    
-12. fliph
-    
-13. rotate90
-  
-14. rotate180
-  
-15. rotate270
+Maps a pixel's intensity to an ASCII character.
+
+### Parameter:
+
+- `intent`: Pixel intensity.
+
+### Explanation:
+
+Maps the pixel intensity to an ASCII character using a predefined list and a calculated scale.
+
+---
+
+## 3. `res`
+
+Resizes an image using nearest-neighbor algorithm.
+
+### Parameters:
+
+- `img`: Source image.
+- `new_dims`: New image dimensions.
+
+### Explanation:
+
+Creates a resized image by mapping pixels from the source image based on their relative positions.
+
+---
+
+## 4. `pixelate`
+
+Pixelates an image.
+
+### Parameters:
+
+- `img`: Source image.
+- `new_dims`: Dimensions for the pixelation effect.
+
+### Explanation:
+
+First scales down the image, then scales it back up, resulting in a pixelated look.
+
+---
+
+## 5. `transparent`
+
+Adds transparency to an image.
+
+### Parameter:
+
+- `img`: Source image.
+
+### Explanation:
+
+Prompts user for a transparency percentage and adjusts the alpha channel of each pixel accordingly.
+
+---
+
+## 6. `concat`
+
+Concatenates multiple images.
+
+### Parameters:
+
+- `images`: Array of images.
+- `check`: Concatenation direction ("h" for horizontal, "v" for vertical).
+
+### Explanation:
+
+Creates a new image with the combined dimensions of the provided images and places them either side-by-side or one below the other.
+
+| Vertical concatenation | Horizontal concantenation |
+| ------------- | ------------- |
+| <img src="https://github.com/Aekkee/Image_manipulator/assets/107569390/4aba926b-962a-4c12-a162-7b927fe9143e" width=500 > | <img src="https://github.com/Aekkee/Image_manipulator/assets/107569390/36b39fec-170f-4674-895b-6c75035a5eda" width=250 > |
+
+---
+
+## 7. `grayscale`
+
+Converts image to grayscale.
+
+### Parameter:
+
+- `img`: Source image.
+
+### Explanation:
+
+Transforms each pixel to its grayscale representation.
+
+---
+
+## 8. `extractwebp` & `extractgif`
+
+Extracts frames from WebP or GIF animations.
+
+### Parameter:
+
+- `path`: File path.
+
+### Explanation:
+
+Reads the source file, decodes its frames, and saves each as a separate PNG file.
+
+---
+
+## 9. `fliph` & `flipv`
+
+Flips an image horizontally or vertically.
+
+### Parameter:
+
+- `image`: Source image.
+
+### Explanation:
+
+For `fliph`, swaps left and right pixels. For `flipv`, swaps top and bottom pixels.
+
+---
+
+## 10. `rotate90`, `rotate180`, `rotate270`
+
+Rotates the image by the specified angle.
+
+### Parameter:
+
+- `image`: Source image.
+
+### Explanation:
+
+Remaps the pixels to produce a rotated image.
+
