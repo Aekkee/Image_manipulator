@@ -90,14 +90,83 @@ To use this program, follow these steps:
 
    ```
 
-   If you enter the nonexistent filepath, it will show the error message.
+   If you enter the nonexistent file path, it will show the error message.
    
    ```shell
    Error: The input file does not exist or is not a valid image.
    Error calling function asciiart: File not found or invalid image
    ```
 
-You will be prompted with a list of available functions. Enter the option number to select a function to apply to your image.
+   Otherwise, if file path is exist anf the image is successfully loaded. Detail of the image will be shown.
+
+   ```shell
+   Enter file path:
+   cat.png
+   
+   Detail:
+   width: 2056
+   height: 1693
+   format: Png
+   ```
+   
+   Then you will have to enter the output file path. If output file is already exist you will be asked to override or change file name.
+   Remark: Some function doesn't require output file.
+
+   ```shell
+   Enter output file path:
+   cat.txt
+   File already exists. Do you want to overwrite it? (y/n):
+   y
+   ```
+
+   This is example result of ascii art function.
+
+   ```shell
+   
+
+
+
+
+
+
+
+
+              WÑ
+             668$$WW
+              40265559$$W#@                          0c
+                !b123133699$W##                     !01b
+                       2489$$WW#@@                   532a
+                         82676689$WW#               =?b:++:5;b1
+                            613799$$$W#@@          b;::+b+:+$##7a;cc?!33          ###WWW####WW$99
+                               5799$$$$$$W#@#@@@@@4c:30?:c77@#$$ca+a2!        #W##WW$$$98$$9$4220
+                                 368879$$$$W######0b009@@@###$81;+:=      $WWWWWW$9986    42
+                                   678799$$$$W####W#WW$#$;cc957$W;a58889$##W#W$W974
+                                     654799$9$9W@WW$WWW87$a!$7820a#24####W#$$$74
+                                        5677876$#W$W9768776547?85####W#WWW974
+                                          523267$#$9W#$87644220####W#W99956
+                                           !!86$$$$9##W$999888#W#WW$9875
+                                            =a7$W$$W###W$$$9W$WW$984
+                                            ++c3$$$#WW$$$$$$$87510
+                                           ;=+;c7$$###9$$$93!!+=+
+                                           ++==+;8$$##W$$81:====
+                                           =-=+=+699$WW$961+=--;
+                                           ---===589$$W$72+=,,,:
+                                          +,---=?59$W$9$5=-,,-+:
+                                          ,,,--!a8$$9973b+-,,-=+
+                                          ,,,,-=a38$$$8?;=-,,-==
+                                         ,,,,,---299W$91=-,,-,==
+                                        +,,.,---+b68$$8;=-,.,-:-+
+                                        .._,-----c6886?=-,,.-=+-=
+                                       -_..,,,:-=05760+-,-.,-=c,,
+                                       ,..,,,,-:!4576?:,--,,.,
+
+
+
+
+
+
+Function asciiart called successfully.
+   ```
 
 ## Guide
 
