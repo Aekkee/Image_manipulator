@@ -27,7 +27,9 @@ Before using this program, you need to have the following:
 
 - Rust programming language installed on your system. Visit this link https://www.rust-lang.org/tools/install to learn how to install rust.
 - Required Rust dependencies mentioned in the code file.
+  
    image v0.24.7 (https://crates.io/crates/image)
+  
    colored v2.0.4 (https://crates.io/crates/colored)
 
 <br><br>
