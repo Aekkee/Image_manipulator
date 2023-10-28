@@ -26,8 +26,6 @@ pub fn run() {
             "asciiart",
             "concatenate",
             "convert",
-            "scaledown",
-            "scaleup",
             "pixelate",
             "settransparency",
             "grayscale",
@@ -37,7 +35,8 @@ pub fn run() {
             "fliph",
             "rotate90",
             "rotate180",
-            "rotate270"
+            "rotate270",
+            "resize"
         ];
 
         for (n, name) in functions.iter().enumerate() {
@@ -213,7 +212,7 @@ fn run_function(function_name: &str) -> Result<(), String> {
             Ok(())
         } 
         "extractgif" => {
-            extractwebp(&path);
+            extractgif(&path);
             Ok(())
         } 
         "flipv" => {
@@ -246,29 +245,13 @@ fn run_function(function_name: &str) -> Result<(), String> {
             let _ = img.save(&output);
             Ok(())
         }
-        "scaledown" => {
-            let output = get_output();
-            println!("Enter new scale: ");
-            let scale = arg().parse().unwrap();
-            let img = img.resize(scale, scale,FilterType::Lanczos3);
-            let _ = img.save(&output);
-            Ok(())
-        }
-        "scaleup" => {
-            let output = get_output();
-            println!("Enter scale: ");
-            let scale = arg().parse().unwrap();
-            let img = img.resize(scale, scale,FilterType::Nearest);
-            let _ = img.save(&output);
-            Ok(())
-        }
         "resize" => {
             let output = get_output();
             println!("Enter new width: ");
             let w = arg().parse().unwrap();
             println!("Enter new height: ");
             let h = arg().parse().unwrap();
-            let img = res(&img.to_rgba8(), (w, h));
+            let img = resize(&img.to_rgba8(), (w, h));
             let _ = img.save(&output);
             Ok(())
         }
@@ -326,7 +309,7 @@ pub fn get_str_ascii(intent: u8) -> &'static str {
     return ascii[index as usize];
 }
 
-fn res(img: &Image, new_dims: (u32, u32)) -> Image {
+fn resize(img: &Image, new_dims: (u32, u32)) -> Image {
     let (old_width, old_height) = img.dimensions();
     let (new_width, new_height) = new_dims;
 
@@ -349,8 +332,8 @@ fn res(img: &Image, new_dims: (u32, u32)) -> Image {
 fn pixelate(img: &DynamicImage, new_dims: (u32, u32)) -> Image {
     let old_dims = img.dimensions();
     let img = img.to_rgba8();
-    let small = res(&img, ((old_dims.0 / new_dims.0), (old_dims.1 / new_dims.1)));
-    let pixelated = res(&small, old_dims);
+    let small = resize(&img, ((old_dims.0 / new_dims.0), (old_dims.1 / new_dims.1)));
+    let pixelated = resize(&small, old_dims);
 
     pixelated
 }
@@ -367,16 +350,16 @@ pub fn transparent(img: &DynamicImage) -> Image {
     img
 }
 
-pub fn fadetop(img: &DynamicImage, width: u32) -> Image {
-    let mut img = img.to_rgba8();
+// pub fn fadetop(img: &DynamicImage, width: u32) -> Image {
+//     let mut img = img.to_rgba8();
 
-    for (x, _y, pixel) in img.enumerate_pixels_mut() {
-        let tsp = 255. - x as f32 / width as f32 * 255.;
-        *pixel = image::Rgba([pixel[0], pixel[1], pixel[2], tsp as u8]);
-    }
+//     for (x, _y, pixel) in img.enumerate_pixels_mut() {
+//         let tsp = 255. - x as f32 / width as f32 * 255.;
+//         *pixel = image::Rgba([pixel[0], pixel[1], pixel[2], tsp as u8]);
+//     }
 
-    img
-}
+//     img
+// }
 
 pub fn concat<I, P, S>(images: &[I], check: &str) -> ImageBuffer<P, Vec<S>>
 where
