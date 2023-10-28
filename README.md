@@ -202,6 +202,10 @@ Pixelates an image.
 
 First scales down the image using function res which creates a resized image by mapping pixels from the source image based on their relative positions, then scales it back up using the same function, resulting in a pixelated look.
 
+| Input  | Output |
+| ------------- | ------------- |
+| <img src="https://github.com/Aekkee/Image_manipulator/assets/107569390/01e5bea8-9146-4843-a511-d9dcf7fa3f53" width="500" >  | <img src="https://github.com/Aekkee/Image_manipulator/assets/107569390/99ab1e9c-b395-4345-bf4b-722483275421" width="500" >| 
+
 ---
 
 ## 3. `transparent`
@@ -215,6 +219,10 @@ Adds transparency to an image.
 ### Explanation:
 
 Prompts user for a transparency percentage and adjusts the alpha channel of each pixel accordingly.
+
+| Input  | Output |
+| ------------- | ------------- |
+| <img src="https://github.com/Aekkee/Image_manipulator/assets/107569390/01e5bea8-9146-4843-a511-d9dcf7fa3f53" width="500" >  | <img src="https://github.com/Aekkee/Image_manipulator/assets/107569390/99ab1e9c-b395-4345-bf4b-722483275421" width="500" >| 
 
 ---
 
@@ -262,6 +270,10 @@ Extracts frames from WebP or GIF animations.
 ### Explanation:
 
 Reads the source file, decodes its frames, and saves each as a separate PNG file.
+
+| Input  | Output |
+| ------------- | ------------- |
+| <img src="https://raw.githubusercontent.com/Aekkee/Image_manipulator/main/test-image/nyan.webp" width="2000" >  | <img src="https://github.com/Aekkee/Image_manipulator/assets/107569390/54e94f02-b5ae-44fa-8f28-fc5acaa1434e" width="200" align="left" ><img src="https://github.com/Aekkee/Image_manipulator/assets/107569390/ce70df5e-a1a6-44e2-96f5-9a6b39487530" width="200" align="center" ><img src="https://github.com/Aekkee/Image_manipulator/assets/107569390/8034b2de-a040-45c4-9754-683d2e5f8526" width="200" align="left"><img src="https://github.com/Aekkee/Image_manipulator/assets/107569390/2a69c0c2-a2bf-4d7f-ae8c-1c0b9a35184f" width="200" align="center"><img src="https://github.com/Aekkee/Image_manipulator/assets/107569390/56d5a0f6-6354-43bc-aff9-0496ad9e8f88" width="200" align="left"><img src="https://github.com/Aekkee/Image_manipulator/assets/107569390/0b4242b1-363c-47a5-bf5c-fd8d4dcc73b8" width="200" align="center"><img src="https://github.com/Aekkee/Image_manipulator/assets/107569390/db39f750-3d5b-4e01-a5da-c8cd880ff28f" width="200" align="left"><img src="https://github.com/Aekkee/Image_manipulator/assets/107569390/0dd51866-6cf2-48d3-8c01-cc8b77fc9fd3" width="200" align="center"><img src="https://github.com/Aekkee/Image_manipulator/assets/107569390/85cf4a38-4b3a-47a4-a059-4b19333aea46" width="200" align="left"><img src="https://github.com/Aekkee/Image_manipulator/assets/107569390/68bbe089-5c85-4d3c-b6a9-6756eac352f7" width="200" align="center"><img src="https://github.com/Aekkee/Image_manipulator/assets/107569390/14ef758e-bd3a-443d-b881-fe1f20195617" width="200" align="left"><img src="https://github.com/Aekkee/Image_manipulator/assets/107569390/c2952981-73f9-4491-b88e-6b6c173aa4a9" width="200" align="center">| 
 
 ---
 
