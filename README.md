@@ -202,6 +202,10 @@ Pixelates an image.
 
 First scales down the image using function res which creates a resized image by mapping pixels from the source image based on their relative positions, then scales it back up using the same function, resulting in a pixelated look.
 
+| Input  | Output |
+| ------------- | ------------- |
+| <img src="https://github.com/Aekkee/Image_manipulator/assets/107569390/01e5bea8-9146-4843-a511-d9dcf7fa3f53" width="500" >  | <img src="https://github.com/Aekkee/Image_manipulator/assets/107569390/99ab1e9c-b395-4345-bf4b-722483275421" width="500" >| 
+
 ---
 
 ## 3. `transparent`
@@ -215,6 +219,10 @@ Adds transparency to an image.
 ### Explanation:
 
 Prompts user for a transparency percentage and adjusts the alpha channel of each pixel accordingly.
+
+| Input  | Output |
+| ------------- | ------------- |
+| <img src="https://github.com/Aekkee/Image_manipulator/assets/107569390/01e5bea8-9146-4843-a511-d9dcf7fa3f53" width="500" >  | <img src="https://github.com/Aekkee/Image_manipulator/assets/107569390/99ab1e9c-b395-4345-bf4b-722483275421" width="500" >| 
 
 ---
 
