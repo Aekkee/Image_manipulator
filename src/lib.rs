@@ -103,16 +103,21 @@ fn arg() -> String {
 }
 
 fn get_output() -> String{
-    println!("Enter output file path: ");
-    let output = arg();
-    if Path::new(&output).exists() {
-        println!("File already exists. Do you want to overwrite it? (y/n): ");
-        let overwrite = arg();
-        if overwrite != "y" {
-            println!("Choose a different output file name.");
+    loop {
+        println!("Enter output file path: ");
+        let output = arg();
+        if Path::new(&output).exists() {
+            println!("File already exists. Do you want to overwrite it? (y/n): ");
+            let overwrite = arg();
+            if overwrite != "y" {
+                println!("Choose a different output file name.");
+            } else {
+                return output
+            }
+        } else {
+            return output
         }
     }
-    return output
 }
 
 fn run_function(function_name: &str) -> Result<(), String> {
@@ -138,7 +143,7 @@ fn run_function(function_name: &str) -> Result<(), String> {
     match function_name.to_ascii_lowercase().as_str() {
         "asciiart" => {
             let output = get_output();
-            ascii_art(&img, x, y, 20, &output);
+            ascii_art(&img, x, y, x/100, &output);
             Ok(())
         }
         "convert" => {
@@ -273,7 +278,6 @@ fn run_function(function_name: &str) -> Result<(), String> {
 
 pub fn ascii_art(img: &DynamicImage, width: u32, height: u32, scale: u32, output: &str) {
     let mut file = File::create(output).expect("Failed");
-    let mut text = String::new();
     for y in 0..height {
         for x in 0..width {
             if y % (scale * 2) == 0 && x % scale == 0 {
@@ -286,11 +290,25 @@ pub fn ascii_art(img: &DynamicImage, width: u32, height: u32, scale: u32, output
                     "{}",
                     get_str_ascii(intent).truecolor(pix[0], pix[1], pix[2])
                 );
-                text += get_str_ascii(intent);
             }
         }
         if y % (scale * 2) == 0 {
             println!("");
+        }
+    }
+    let mut text = String::new();
+    for y in 0..height {
+        for x in 0..width {
+            if y % 2 == 0{
+                let pix = img.get_pixel(x, y);
+                let mut intent = pix[0] / 3 + pix[1] / 3 + pix[2] / 3;
+                if pix[3] == 0 {
+                    intent = 0;
+                }
+                text += get_str_ascii(intent);
+            }
+        }
+        if y % 2 == 0 {
             text += "\n"
         }
     }
