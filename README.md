@@ -182,7 +182,7 @@ Transforms an image into colorful ASCII representation.
 
 ### Explanation:
 
-Iterates through image pixels and maps the average color value to an ASCII character. The result is printed to the console and saved to a file.
+Iterates through image pixels and maps the average color value to an ASCII character by using function get_str_ascii which will  map the pixel intensity to an ASCII character using a predefined list and a calculated scale. The result is printed to the console and saved to a file.
 
 | Input  | Output |
 | ------------- | ------------- |
@@ -190,36 +190,7 @@ Iterates through image pixels and maps the average color value to an ASCII chara
 
 ---
 
-## 2. `get_str_ascii`
-
-Maps a pixel's intensity to an ASCII character.
-
-### Parameter:
-
-- `intent`: Pixel intensity.
-
-### Explanation:
-
-Maps the pixel intensity to an ASCII character using a predefined list and a calculated scale.
-
----
-
-## 3. `res`
-
-Resizes an image using nearest-neighbor algorithm.
-
-### Parameters:
-
-- `img`: Source image.
-- `new_dims`: New image dimensions.
-
-### Explanation:
-
-Creates a resized image by mapping pixels from the source image based on their relative positions.
-
----
-
-## 4. `pixelate`
+## 2. `pixelate`
 
 Pixelates an image.
 
@@ -230,11 +201,11 @@ Pixelates an image.
 
 ### Explanation:
 
-First scales down the image, then scales it back up, resulting in a pixelated look.
+First scales down the image using function res which creates a resized image by mapping pixels from the source image based on their relative positions, then scales it back up using the same function, resulting in a pixelated look.
 
 ---
 
-## 5. `transparent`
+## 3. `transparent`
 
 Adds transparency to an image.
 
@@ -248,7 +219,7 @@ Prompts user for a transparency percentage and adjusts the alpha channel of each
 
 ---
 
-## 6. `concat`
+## 4. `concat`
 
 Concatenates multiple images.
 
@@ -267,7 +238,7 @@ Creates a new image with the combined dimensions of the provided images and plac
 
 ---
 
-## 7. `grayscale`
+## 5. `grayscale`
 
 Converts image to grayscale.
 
@@ -281,7 +252,7 @@ Transforms each pixel to its grayscale representation.
 
 ---
 
-## 8. `extractwebp` & `extractgif`
+## 6. `extractwebp` & `extractgif`
 
 Extracts frames from WebP or GIF animations.
 
@@ -295,7 +266,7 @@ Reads the source file, decodes its frames, and saves each as a separate PNG file
 
 ---
 
-## 9. `fliph` & `flipv`
+## 7. `fliph` & `flipv`
 
 Flips an image horizontally or vertically.
 
@@ -309,7 +280,7 @@ For `fliph`, swaps left and right pixels. For `flipv`, swaps top and bottom pixe
 
 ---
 
-## 10. `rotate90`, `rotate180`, `rotate270`
+## 8. `rotate90`, `rotate180`, `rotate270`
 
 Rotates the image by the specified angle.
 
