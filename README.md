@@ -56,18 +56,17 @@ To use this program, follow these steps:
    0: asciiart
    1: concatenate
    2: convert
-   3: scaledown
-   4: scaleup
-   5: pixelate
-   6: settransparency
-   7: grayscale
-   8: extractwebp
-   9: extractgif
-   10: flipv
-   11: fliph
-   12: rotate90
-   13: rotate180
-   14: rotate270
+   3: pixelate
+   4: settransparency
+   5: grayscale
+   6: extractwebp
+   7: extractgif
+   8: flipv
+   9: fliph
+   10: rotate90
+   11: rotate180
+   12: rotate270
+   13: resize
    Enter option num:
 
    ```
@@ -292,3 +291,17 @@ Rotates the image by the specified angle.
 
 Remaps the pixels to produce a rotated image.
 
+---
+
+## 9. `resize`
+
+Resizes an image using nearest-neighbor algorithm.
+
+### Parameters:
+
+- `img`: Source image.
+- `new_dims`: New image dimensions.
+
+### Explanation:
+
+Creates a resized image by mapping pixels from the source image based on their relative positions.
