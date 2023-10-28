@@ -172,17 +172,35 @@ To use this program, follow these steps:
 This topic will include guide for every function in this program and example of the output.
 
 1. Asciiart
+
+| Input  | Output |
+| ------------- | ------------- |
+| <img src="https://github.com/Aekkee/Image_manipulator/assets/107569390/01e5bea8-9146-4843-a511-d9dcf7fa3f53" width="500" >  | <img src="https://github.com/Aekkee/Image_manipulator/assets/107569390/99ab1e9c-b395-4345-bf4b-722483275421" width="500" >| 
+
 2. Concatenate
+   
 3. Convert
+
 4. Scaledown
+
 5. Scaleup
+   
 6. Pixelate
+   
 7. Settransparency
+    
 8. Grayscale
+     
 9. Extractwebp
+    
 10. Extractgif
+    
 11. flipv
+    
 12. fliph
+    
 13. rotate90
+  
 14. rotate180
+  
 15. rotate270
