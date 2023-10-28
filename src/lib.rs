@@ -170,7 +170,6 @@ fn run_function(function_name: &str) -> Result<(), String> {
             Ok(())
         }
         "pixelate" => {
-            println!("Enter output text file: ");
             let output = get_output();
             println!("Enter numbers of pixel: ");
             let pixel: u32 = arg().parse().unwrap();
@@ -179,6 +178,7 @@ fn run_function(function_name: &str) -> Result<(), String> {
             Ok(())
         }
         "settransparency" => {
+            println!("Output must be in png format");
             let output = get_output();
             let img = transparent(&img);
             let _ = img.save(&output);
@@ -340,7 +340,7 @@ fn pixelate(img: &DynamicImage, new_dims: (u32, u32)) -> Image {
 
 pub fn transparent(img: &DynamicImage) -> Image {
     println!("Enter transparency percentage: ");
-    let value: f32 = (100. - arg().parse::<f32>().unwrap()) / 100. * 255.;
+    let value: f32 = arg().parse::<f32>().unwrap() / 100. * 255. ;
     let mut img = img.to_rgba8();
 
     for (_x, _y, pixel) in img.enumerate_pixels_mut() {
