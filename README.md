@@ -204,7 +204,7 @@ First scales down the image using function res which creates a resized image by 
 
 | Input  | Output |
 | ------------- | ------------- |
-| <img src="https://github.com/Aekkee/Image_manipulator/assets/107569390/01e5bea8-9146-4843-a511-d9dcf7fa3f53" width="500" >  | <img src="https://github.com/Aekkee/Image_manipulator/assets/107569390/99ab1e9c-b395-4345-bf4b-722483275421" width="500" >| 
+| <img src="https://github.com/Aekkee/Image_manipulator/blob/main/test-image/mercedes.jpg?raw=true" width="500" >| <img src="https://github.com/Aekkee/Image_manipulator/blob/main/test-output/mercedes-pixel.jpg?raw=true" width="500" >| 
 
 ---
 
@@ -222,7 +222,7 @@ Prompts user for a transparency percentage and adjusts the alpha channel of each
 
 | Input  | Output |
 | ------------- | ------------- |
-| <img src="https://github.com/Aekkee/Image_manipulator/assets/107569390/01e5bea8-9146-4843-a511-d9dcf7fa3f53" width="500" >  | <img src="https://github.com/Aekkee/Image_manipulator/assets/107569390/99ab1e9c-b395-4345-bf4b-722483275421" width="500" >| 
+| <img src="https://github.com/Aekkee/Image_manipulator/assets/107569390/4814d8b0-07fb-4d26-986e-7f9e8fe3ba33" width="500" >  | <img src="https://github.com/Aekkee/Image_manipulator/blob/main/test-output/tower-fade.png?raw=true" width="500" >| 
 
 ---
 
@@ -256,6 +256,10 @@ Converts image to grayscale.
 ### Explanation:
 
 Transforms each pixel to its grayscale representation.
+
+| Input  | Output |
+| ------------- | ------------- |
+| <img src="https://github.com/Aekkee/Image_manipulator/blob/main/test-image/tower.jpg?raw=true" width="500" >  | <img src="https://github.com/Aekkee/Image_manipulator/blob/main/test-output/graytower.jpg?raw=true" width="500" >| 
 
 ---
 
