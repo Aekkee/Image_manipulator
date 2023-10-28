@@ -167,7 +167,7 @@ To use this program, follow these steps:
 
 <br><br>
 
-## Guide
+## Guide and explanation
 
 This topic will include guide for every function in this program and example of the output.
 
