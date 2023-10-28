@@ -25,7 +25,7 @@ This program is a command-line tool for various image processing tasks. It provi
 
 Before using this program, you need to have the following:
 
-- Rust programming language installed on your system.
+- Rust programming language installed on your system. Visit this link https://www.rust-lang.org/tools/install to learn how to install rust.
 - Required Rust dependencies mentioned in the code file.
 
 <br><br>
@@ -41,19 +41,19 @@ To use this program, follow these steps:
    cd your-repo
    ```
 
-3. Build the program: Before running the program, it's essential to build it using Cargo, the Rust package manager. In your terminal, navigate to the project directory and run cargo build. This command compiles the program, making it ready for execution.
+2. Build the program: Before running the program, it's essential to build it using Cargo, the Rust package manager. In your terminal, navigate to the project directory and run cargo build. This command compiles the program, making it ready for execution.
 
    ```shell
    cargo build
    ```
 
-4. Run the program: Now that you've successfully built the program, you're ready to start applying image processing functions. Simply run the program using cargo run in your terminal. 
+3. Run the program: Now that you've successfully built the program, you're ready to start applying image processing functions. Simply run the program using cargo run in your terminal. 
    
    ```shell
    cargo run
    ```
    
-5. Prompting the program: After run the program, it will present you with a list of available functions, each with its own unique capability. To select a function, enter the corresponding option number.
+4. Prompting the program: After run the program, it will present you with a list of available functions, each with its own unique capability. To select a function, enter the corresponding option number.
    
    ```shell
    0: asciiart
@@ -75,7 +75,7 @@ To use this program, follow these steps:
 
    ```
       
-If you enter the invalid number, it will show the error message.
+   If you enter the invalid number, it will show the error message.
    
    ```shell
    Enter option num:
@@ -83,14 +83,14 @@ If you enter the invalid number, it will show the error message.
    Invalid option number.
    ```
 
-After select the function the program will ask you to enter the input image path.
+   After select the function the program will ask you to enter the input image path.
 
    ```shell
    Enter file path:
 
    ```
 
-If you enter the nonexistent filepath, it will show the error message.
+   If you enter the nonexistent filepath, it will show the error message.
    
    ```shell
    Error: The input file does not exist or is not a valid image.
