@@ -8,13 +8,3 @@ edition = "2021"
 [dependencies]
 image = "0.24.3"
 colored = "2.0.4"
-ratatui = "0.24.0"
-ratatui-image = "0.3.3"
-tui = "0.19.0"
-crossterm = "0.27"
-sys = "0.0.0"
-
-[dependencies.nokhwa]
-version = "0.10.0"
-# Use the native input backends, enable WGPU integration
-features = ["input-native", "output-wgpu"]
