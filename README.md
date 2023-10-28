@@ -8,13 +8,6 @@ King Mongkut's Institute of Technology Ladkrabang
 
 <br><br>
 
-### This Github repository contains:
-
-- Program explaination
-- Guide for using program
-
-<br><br>
-
 ## Introduction
 
 This program is a command-line tool for various image processing tasks. It provides a set of functions to manipulate and transform images in different ways.
