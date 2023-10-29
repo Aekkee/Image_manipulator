@@ -293,6 +293,16 @@ Flips an image horizontally or vertically.
 
 For `fliph`, swaps left and right pixels. For `flipv`, swaps top and bottom pixels.
 
+#### fliph
+| Input  | Output |
+| ------------- | ------------- |
+| <img src="https://github.com/Aekkee/Image_manipulator/assets/107569390/4814d8b0-07fb-4d26-986e-7f9e8fe3ba33" width="500" >  | <img src="https://github.com/Aekkee/Image_manipulator/blob/main/test-output/towerfliph.jpg?raw=true" width="500" >| 
+
+#### flipv
+| Input  | Output |
+| ------------- | ------------- |
+| <img src="https://github.com/Aekkee/Image_manipulator/assets/107569390/4814d8b0-07fb-4d26-986e-7f9e8fe3ba33" width="500" >  | <img src="https://github.com/Aekkee/Image_manipulator/blob/main/test-output/towerflipv.jpg?raw=true" width="500" >| 
+
 ---
 
 ## 8. `rotate90`, `rotate180`, `rotate270`
@@ -306,6 +316,21 @@ Rotates the image by the specified angle.
 ### Explanation:
 
 Remaps the pixels to produce a rotated image.
+
+#### rotate90
+| Input  | Output |
+| ------------- | ------------- |
+| <img src="https://github.com/Aekkee/Image_manipulator/assets/107569390/4814d8b0-07fb-4d26-986e-7f9e8fe3ba33" width="500" >  | <img src="https://github.com/Aekkee/Image_manipulator/blob/main/test-output/tower90.jpg?raw=true" height="500" >| 
+
+#### rotate180
+| Input  | Output |
+| ------------- | ------------- |
+| <img src="https://github.com/Aekkee/Image_manipulator/assets/107569390/4814d8b0-07fb-4d26-986e-7f9e8fe3ba33" width="500" >  | <img src="https://github.com/Aekkee/Image_manipulator/blob/main/test-output/tower180.jpg?raw=true" width="500" >| 
+
+#### rotate270
+| Input  | Output |
+| ------------- | ------------- |
+| <img src="https://github.com/Aekkee/Image_manipulator/assets/107569390/4814d8b0-07fb-4d26-986e-7f9e8fe3ba33" width="500" >  | <img src="https://github.com/Aekkee/Image_manipulator/blob/main/test-output/tower270.jpg?raw=true" height="500" >| 
 
 ---
 
@@ -321,3 +346,7 @@ Resizes an image using nearest-neighbor algorithm.
 ### Explanation:
 
 Creates a resized image by mapping pixels from the source image based on their relative positions.
+
+| Input  | Output |
+| ------------- | ------------- |
+| <img src="https://github.com/Aekkee/Image_manipulator/assets/107569390/4814d8b0-07fb-4d26-986e-7f9e8fe3ba33" width="500" >  | <img src="https://github.com/Aekkee/Image_manipulator/blob/main/test-output/tower200x200.jpg?raw=true">| 
