@@ -17,68 +17,50 @@ type Image = ImageBuffer<Rgba<u8>, Vec<u8>>;
 
 #[allow(unused_comparisons)]
 pub fn run() {
-    let args: Vec<String> = std::env::args().collect();
 
-    if args.len() > 1 && args[1] == "help" {
-        display_function_definitions();
-    } else {
-        let functions = [
-            "asciiart",
-            "concatenate",
-            "convert",
-            "pixelate",
-            "settransparency",
-            "grayscale",
-            "extractwebp",
-            "extractgif",
-            "flipv",
-            "fliph",
-            "rotate90",
-            "rotate180",
-            "rotate270",
-            "resize"
-        ];
+    let functions = [
+        "asciiart",
+        "concatenate",
+        "convert",
+        "pixelate",
+        "settransparency",
+        "grayscale",
+        "extractwebp",
+        "extractgif",
+        "flipv",
+        "fliph",
+        "rotate90",
+        "rotate180",
+        "rotate270",
+        "resize"
+    ];
 
-        for (n, name) in functions.iter().enumerate() {
-            println!("{}: {}", n, name);
-        }
+    for (n, name) in functions.iter().enumerate() {
+        println!("{}: {}", n, name);
+    }
 
-        println!("Enter option num: ");
+    println!("Enter option num: ");
 
-        let function_num = match read_option() {
-            Ok(num) => num,
-            Err(error) => {
-                eprintln!("Error reading option: {}", error);
-                return;
-            }
-        };
-
-        if function_num < 0 || function_num >= functions.len() {
-            eprintln!("Invalid option number.");
+    let function_num = match read_option() {
+        Ok(num) => num,
+        Err(error) => {
+            eprintln!("Error reading option: {}", error);
             return;
         }
+    };
 
-        let function_name = functions[function_num];
-
-        match run_function(function_name) {
-            Ok(_) => println!("Function {} called successfully.", function_name),
-            Err(error) => eprintln!("Error calling function {}: {}", function_name, error),
-        }
+    if function_num < 0 || function_num >= functions.len() {
+        eprintln!("Invalid option number.");
+        return;
     }
-}
 
-fn display_function_definitions() {
-    // println!("Available Functions:");
-    // println!("0: AsciiArt");
-    // println!("1: Concatenate");
-    // println!("2: Convert");
-    // println!("3: Pixelate");
-    // println!("4: Colorfilter");
-    // println!("5: SetTransparency");
-    // println!("6: Scaleup");
-    // println!("7: Scaledown");
-    // println!("8: Grayscale");
-    // println!("9: Extract");
+    let function_name = functions[function_num];
+
+    match run_function(function_name) {
+        Ok(_) => println!("Function {} called successfully.", function_name),
+        Err(error) => eprintln!("Error calling function {}: {}", function_name, error),
+    }
+
 }
 
 fn read_option() -> Result<usize, io::Error> {
@@ -459,7 +441,7 @@ pub fn flipv(image: &DynamicImage) -> Image {
 
 pub fn rotate90(image: &DynamicImage) -> Image{
     let (width, height) = image.dimensions();
-    let mut img: Image = ImageBuffer::new(width, height);
+    let mut img: Image = ImageBuffer::new(height, width);
     for y in 0..height {
         for x in 0..width {
             let p = image.get_pixel(x, y);
@@ -483,7 +465,7 @@ pub fn rotate180(image: &DynamicImage) -> Image{
 
 pub fn rotate270(image: &DynamicImage) -> Image{
     let (width, height) = image.dimensions();
-    let mut img: Image = ImageBuffer::new(width, height);
+    let mut img: Image = ImageBuffer::new(height, width);
     for y in 0..height {
         for x in 0..width {
             let p = image.get_pixel(x, y);
